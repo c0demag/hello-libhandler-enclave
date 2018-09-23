@@ -4,7 +4,13 @@ libhandler inside enclaves "hello, world"
 
 ## Compiling
 
-use the make and pass in the argument LIBHANDLER_DIR. For example:
+First ensure the SGX SDK is installed. Instructions here: https://github.com/intel/linux-sgx
+
+Then make sure the SGX environment variables are set:
+
+    $ source ${sgx-sdk-install-path}/environment
+
+Finally use the make and pass in the location of LIBHANDLER_DIR. libhandler must already have been built. For example:
 
     $ make LIBHANDLER_DIR=../libhandler 
 

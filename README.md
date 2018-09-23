@@ -1,6 +1,6 @@
 # Introduction
 
-libhandler inside enclaves "hello, world"
+"hello, world" for libhandler inside enclaves
 
 ## Compiling
 
@@ -10,7 +10,7 @@ Then make sure the SGX environment variables are set:
 
     $ source ${sgx-sdk-install-path}/environment
 
-Finally use the make and pass in the location of LIBHANDLER_DIR. libhandler must already have been built. For example:
+Finally use make and pass in the location of LIBHANDLER_DIR. libhandler must already have been built. For example:
 
     $ make LIBHANDLER_DIR=../libhandler 
 

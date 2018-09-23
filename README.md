@@ -1,23 +1,16 @@
-# Intel SGX "Hello World"
+# Introduction
 
-This is meant to be a base template for an [Intel SGX](https://github.com/01org/linux-sgx/) application on Linux. Not sure if it is just me, but I feel the documentations on Intel SGX development on Linux is still sorely lacking. This meant to be a stub of a "Getting-started" tutorial.
+libhandler inside enclaves "hello, world"
 
-This template is based on the SampleEnclave app of the sample enclaves provided with the Intel SGX Linux [drivers](https://github.com/01org/linux-sgx-driver) and [SDK](https://github.com/01org/linux-sgx/).
+## Compiling
 
-## Features
+use the make and pass in the argument LIBHANDLER_DIR. For example:
 
-- Sample code for doing `ECALL`
-- Sample code for doing `OCALL`
-- Sample code for sealing (can be taken out and patched into your enclave!)
+    $ make LIBHANDLER_DIR=../libhandler 
 
-## TODO
+This doesn't compile for two reasons. 
 
-- Tutorial explaining what each directory and file is used for.
-
-- Write a getting started tutorial.
-
-- Tutorial on treating `edl`s as static library (with the sealing functions as example)
-
-## Contribute
-
-Any help for the above TODOs or any general feedback will be much appreciated! Go ahead and submit those PRs in!
+1. First, FILE objects cannot be referred to inside the enclave. And
+   libhandler.h has two API calls which use FILE.
+2. Second, the libhandler lib makes many references to functions like fprintf
+   which can't be used inside the enclave.

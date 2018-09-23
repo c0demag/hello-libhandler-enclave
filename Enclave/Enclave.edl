@@ -1,6 +1,4 @@
 enclave {
-    from "Sealing/Sealing.edl" import *;
-
     trusted {
         /* define ECALLs here. */
         public int generate_random_number(void);

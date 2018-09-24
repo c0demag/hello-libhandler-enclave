@@ -25,6 +25,9 @@ int main(int argc, char const *argv[]) {
     }
     printf("Random number: %d\n", ptr);
 
+    status = enclave_main(global_eid, &ptr);
+    printf("enclave main: %d\n", ptr);
+
     // Seal the random number
     return 0;
 }

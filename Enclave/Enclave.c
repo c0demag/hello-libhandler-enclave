@@ -42,7 +42,7 @@ lh_value divide_by(lh_value x){
 
 int enclave_main(){
   my_exn_handle(divide_by, lh_value_long(0));
-  return 0;
+  return 33;
 }
 
 int generate_random_number() {
